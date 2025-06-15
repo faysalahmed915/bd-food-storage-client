@@ -26,6 +26,15 @@ const Fridge = () => {
                 {allFoods.map(food => (
                     <FoodCard key={food._id} food={food} />
                 ))}
+                {allFoods.map(food => (
+                    <FoodCard key={food._id} food={food} />
+                ))}
+                {allFoods.map(food => (
+                    <FoodCard key={food._id} food={food} />
+                ))}
+                {allFoods.map(food => (
+                    <FoodCard key={food._id} food={food} />
+                ))}
             </div>
         </div>
     );

@@ -8,6 +8,7 @@ import Login from "../Components/AuthPages/Login";
 import SignUp from "../Components/AuthPages/Signup";
 import MyItems from "../Pages/MyItems";
 import AddFood from "../Pages/AddFood";
+import FoodDetails from "../Components/Foods/FoodDetails";
 
 
 export const Router = createBrowserRouter([
@@ -38,6 +39,15 @@ export const Router = createBrowserRouter([
             {
                 path: '/AddFood',
                 Component: AddFood,
+            },
+            {
+                path: '/FoodDetails/:id',
+                Component: FoodDetails,
+                loader: async ({ params }) => {
+                    const res = await fetch(`http://localhost:3000/fridge/${params.id}`);
+                    return res.json();
+                },
+                hydrateFallbackElement: <h1>Loading...</h1>,
             },
             {
                 path: '/ContactUs',
