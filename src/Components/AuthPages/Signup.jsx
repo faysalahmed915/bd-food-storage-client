@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
-// import axios from 'axios';
-// import Swal from 'sweetalert2';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const { createUser, setUser, updateUserProfile, signInWithGoogle, setLoading } = useContext(AuthContext);
@@ -43,7 +43,7 @@ const SignUp = () => {
         // const newUser = Object.fromEntries(formData.entries())
         // console.log(newUser);
 
-        // const newUser = { name, email, photoURL }
+        const newUser = { name, email, photoURL }
 
 
 
@@ -81,22 +81,22 @@ const SignUp = () => {
 
 
 
-        // axios.post('http://localhost:3000/allUsers', newUser)
-        //     .then(res => {
-        //         console.log(res.data)
-        //         if (res.data.insertedId) {
-        //             Swal.fire({
-        //                 position: "top-end",
-        //                 icon: "success",
-        //                 title: "Your application has been submitted",
-        //                 showConfirmButton: false,
-        //                 timer: 1500
-        //             });
-        //         }
-        //     })
-        //     .catch(error => {
-        //         console.log(error)
-        //     })
+        axios.post('http://localhost:3000/allUsers', newUser)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your application has been submitted",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+            .catch(error => {
+                console.log(error)
+            })
 
     }
 
