@@ -24,6 +24,12 @@ export const Router = createBrowserRouter([
             {
                 path: '/fridge',
                 Component: Fridge,
+                loader: async () => {
+                    const res = await fetch('http://localhost:3000/fridge');
+                    return res.json();
+                },
+                hydrateFallbackElement: <h1>Loading...</h1>,
+
             },
             {
                 path: '/MyItems',

@@ -31,12 +31,12 @@ const AddFood = () => {
             userEmail: user.email,
             addedDate: new Date().toISOString(),
         };
-        console.log(foodItem);
+        // console.log(foodItem);
 
 
         axios.post('http://localhost:3000/fridge', foodItem)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.insertedId) {
                     Swal.fire({
                         position: "top-end",
