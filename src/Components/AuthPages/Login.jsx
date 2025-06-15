@@ -1,4 +1,4 @@
-import React, { use, useState } from 'react';
+import React, { use } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 // import { AuthContext } from '../../provider/AuthProvider';
 // import { toast, ToastContainer } from 'react-toastify';
@@ -10,15 +10,15 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const [errorMessage, setErrorMessage] = useState("");
-    console.log(errorMessage)
+    // const [errorMessage, setErrorMessage] = useState("");
+    // console.log(errorMessage)
 
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        setErrorMessage('');
+        // setErrorMessage('');
         // console.log(email, password);
 
         logIn(email, password)
@@ -28,13 +28,16 @@ const Login = () => {
                 console.log(user);
                 toast.success("User logged in successfully");
                 navigate(location.state?.from?.pathname || "/");
+
+               
+
                 // navigate( `${location.state? location.state : "/"}`);
             })
             .catch((error) => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode, errorMessage);
-                alert(errorMessage);
+                toast.error(errorMessage);
             })
             .finally(() => setLoading(false));
     };
@@ -61,8 +64,9 @@ const Login = () => {
             .then((result) => {
                 const user = result.user;
                 console.log(user);
-                toast.success("User logged in successfully")
+                toast.success("User logged in successfully");
                 navigate(location.state?.from?.pathname || "/");
+                // axios.post
                 // navigate(`${location.state ? location.state : "/"}`);
                 // navigate(from, { replace: true });
             })
@@ -70,7 +74,7 @@ const Login = () => {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 console.log(errorCode);
-                alert(errorMessage);
+                toast.error(errorMessage);
                 // navigate( `${location.state? location.state : "/login"}`);
             })
             .finally(() => setLoading(false));

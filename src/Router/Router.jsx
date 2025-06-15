@@ -6,6 +6,8 @@ import Fridge from "../Pages/Fridge";
 import ContactUs from "../Pages/ContactUs";
 import Login from "../Components/AuthPages/Login";
 import SignUp from "../Components/AuthPages/Signup";
+import MyItems from "../Pages/MyItems";
+import AddFood from "../Pages/AddFood";
 
 
 export const Router = createBrowserRouter([
@@ -22,6 +24,14 @@ export const Router = createBrowserRouter([
             {
                 path: '/fridge',
                 Component: Fridge,
+            },
+            {
+                path: '/MyItems',
+                Component: MyItems,
+            },
+            {
+                path: '/AddFood',
+                Component: AddFood,
             },
             {
                 path: '/ContactUs',

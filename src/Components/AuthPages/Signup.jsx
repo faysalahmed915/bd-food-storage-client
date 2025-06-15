@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
+// import axios from 'axios';
+// import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const { createUser, setUser, updateUserProfile, signInWithGoogle, setLoading } = useContext(AuthContext);
@@ -17,49 +19,6 @@ const SignUp = () => {
         event.preventDefault();
         const form = event.target;
         setErrorMessage('');
-
-
-        const formData = new FormData(form);
-        console.log('Form Data:', Object.fromEntries(formData.entries()));
-        const newUser = Object.fromEntries(formData.entries())
-        console.log(newUser);
-
-        // send data to the server
-        fetch('https://pawsome-hobby-server.vercel.app/signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newUser),
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log('Success:', data);
-                // Optionally, you can redirect or show a success message here
-                // form.reset(); 
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-
-            })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         const name = form.name.value;
         const photoURL = form.photoURL.value;
@@ -77,6 +36,17 @@ const SignUp = () => {
             setErrorMessage("Password did not match")
             return;
         }
+
+
+        // const formData = new FormData(form);
+        // // console.log('Form Data:', Object.fromEntries(formData.entries()));
+        // const newUser = Object.fromEntries(formData.entries())
+        // console.log(newUser);
+
+        // const newUser = { name, email, photoURL }
+
+
+
         createUser(email, password)
             .then((userCredential) => {
                 // Signed up 
@@ -105,6 +75,29 @@ const SignUp = () => {
                 setErrorMessage(errorCode);
             })
             .finally(() => setLoading(false));
+
+
+
+
+
+
+        // axios.post('http://localhost:3000/allUsers', newUser)
+        //     .then(res => {
+        //         console.log(res.data)
+        //         if (res.data.insertedId) {
+        //             Swal.fire({
+        //                 position: "top-end",
+        //                 icon: "success",
+        //                 title: "Your application has been submitted",
+        //                 showConfirmButton: false,
+        //                 timer: 1500
+        //             });
+        //         }
+        //     })
+        //     .catch(error => {
+        //         console.log(error)
+        //     })
+
     }
 
     const handleGoogleSignIn = () => {

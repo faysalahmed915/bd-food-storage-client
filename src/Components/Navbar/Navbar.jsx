@@ -28,12 +28,12 @@ const Navbar = () => {
         <>
             <NavLink to="/" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-gray-500"}>Home</NavLink>
 
-            {/* {user && <NavLink to="/Profile" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-gray-500"}>Profile</NavLink>} */}
+            {user && <NavLink to="/MyItems" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-gray-500"}>My Items</NavLink>}
 
             <NavLink to="/fridge" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-gray-500"}>Fridge</NavLink>
 
 
-            {/* {user && <NavLink to="/MyGroup" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-gray-500"}>My Groups</NavLink>} */}
+            {user && <NavLink to="/AddFood" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-gray-500"}>Add Food</NavLink>}
 
             <NavLink to="/contactUs" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-gray-500"}>Contact Us</NavLink>
         </>
