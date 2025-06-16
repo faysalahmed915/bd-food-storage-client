@@ -9,6 +9,7 @@ import SignUp from "../Components/AuthPages/Signup";
 import MyItems from "../Pages/MyItems";
 import AddFood from "../Pages/AddFood";
 import FoodDetails from "../Components/Foods/FoodDetails";
+import PrivateRout from "../Provider/PrivateRout";
 
 
 export const Router = createBrowserRouter([
@@ -34,15 +35,22 @@ export const Router = createBrowserRouter([
             },
             {
                 path: '/MyItems',
-                Component: MyItems,
+                element: <PrivateRout>
+                    <MyItems></MyItems>
+                </PrivateRout>,
             },
             {
                 path: '/AddFood',
-                Component: AddFood,
+                element: <PrivateRout>
+                    <AddFood></AddFood>
+                </PrivateRout>,
             },
             {
                 path: '/FoodDetails/:id',
-                Component: FoodDetails,
+                element: <PrivateRout>
+                    <FoodDetails></FoodDetails>
+                </PrivateRout>,
+                // Component: FoodDetails,
                 loader: async ({ params }) => {
                     const res = await fetch(`http://localhost:3000/fridge/${params.id}`);
                     return res.json();

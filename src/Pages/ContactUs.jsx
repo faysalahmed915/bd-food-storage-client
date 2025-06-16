@@ -2,13 +2,13 @@ import React from 'react';
 
 const ContactUs = () => {
     return (
-        <section className="py-12 bg-gray-50 text-gray-800">
+        <section className="py-12">
             <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x md:divide-gray-300">
                 {/* Contact Info */}
                 <div className="py-8 md:px-6">
                     <h1 className="text-4xl font-extrabold mb-2">Get in touch</h1>
-                    <p className="text-gray-600 mb-6">We’d love to hear from you. Here’s how you can reach us.</p>
-                    <div className="space-y-5 text-gray-700">
+                    <p className="mb-6">We’d love to hear from you. Here’s how you can reach us.</p>
+                    <div className="space-y-5">
                         <p className="flex items-center gap-4">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-6 h-6 text-blue-600" viewBox="0 0 20 20">
                                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
@@ -35,19 +35,19 @@ const ContactUs = () => {
                 <form noValidate className="flex flex-col py-8 space-y-6 md:px-6">
                     <h1 className="text-4xl font-extrabold mb-2">Let Us Know</h1>
                     <label className="block">
-                        <span className="text-sm font-medium text-gray-700">Full Name</span>
+                        <span className="text-sm font-medium">Full Name</span>
                         <input type="text" placeholder="Your name"
-                            className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                            className="mt-1 w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </label>
                     <label className="block">
-                        <span className="text-sm font-medium text-gray-700">Email Address</span>
+                        <span className="text-sm font-medium">Email Address</span>
                         <input type="email" placeholder="Your email"
                             className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </label>
                     <label className="block">
-                        <span className="text-sm font-medium text-gray-700">Message</span>
+                        <span className="text-sm font-medium">Message</span>
                         <textarea rows="4" placeholder="Your message"
-                            className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            className="mt-1 w-full px-4 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                     </label>
                     <button type="submit"
                         className="w-full md:w-auto self-center px-8 py-3 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700 transition">

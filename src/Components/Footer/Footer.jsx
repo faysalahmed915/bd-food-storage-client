@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Footer = () => {
   return (
@@ -9,9 +8,9 @@ const Footer = () => {
       <div className="max-w-5xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between gap-6">
         {/* Logo and Description */}
         <div className="space-y-2">
-          <h2 className="text-2xl font-bold text-green-600">Pawsome Hobby</h2>
+          <h2 className="text-2xl font-bold text-green-600">BD Food Storage</h2>
           <p className="text-sm max-w-xs">
-            Bringing passionate people together through hobby groups. Create, join, and thrive in your community.
+            In Bangladesh’s warm and humid climate, proper food storage is essential to prevent spoilage and ensure food safety. Always store perishable items in a refrigerator, keep dry goods in airtight containers, and monitor expiry dates regularly.
           </p>
         </div>
 
@@ -38,13 +37,13 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h3 className="font-semibold mb-2">Contact Us</h3>
-          <p className="text-sm">hello@pawsomehobby.com</p>
+          <p className="text-sm">hello@bd-food-storage.com</p>
           <p className="text-sm">+123 456 7890</p>
         </div>
       </div>
 
       <div className="border-t border-gray-300 dark:border-gray-700 text-center py-4 text-sm">
-        © {new Date().getFullYear()} Pawsome Hobby. All rights reserved.
+        © {new Date().getFullYear()} bd-food-storage. All rights reserved.
       </div>
     </footer>
 

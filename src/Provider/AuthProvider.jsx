@@ -1,8 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, sendPasswordResetEmail } from "firebase/auth";
 import { updateProfile as firebaseUpdateProfile } from "firebase/auth";
-// import Loading from '../Components/Loading/Loading';
-import toast from 'react-hot-toast';
 import app from '../firebase/firebase.config';
 
 
@@ -15,9 +13,6 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
-    const [paidId, setPaidId] = useState([]);
-    const [balance, setBalance] = useState(10000);
     
 
     const createUser = (email, password) => {
@@ -54,24 +49,7 @@ const AuthProvider = ({ children }) => {
         return firebaseUpdateProfile(auth.currentUser, profile);
     };
 
-    const handlePayment = (id, amount) => {
-        console.log(id)
-        if (paidId.includes(id)) {
-            toast.error("Already paid");
-            
-            return
-        }
-        else if (amount > balance) {
-            alert("Insufficient balance. Please add money to your account.");
-            toast.error("Insufficient balance")
-            return
-        }
-        else {
-            setPaidId([...paidId, id]);
-            setBalance(balance - amount);
-            toast.success("Payment successful");
-        }
-    }
+    
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -92,9 +70,6 @@ const AuthProvider = ({ children }) => {
         logIn,
         logOut,
         updateUserProfile,
-        handlePayment,
-        paidId,
-        balance,
         signInWithGoogle,
         resetPassword,
     };
