@@ -156,65 +156,6 @@ const UpdateFoodModal = ({ isOpen, onClose, item }) => {
                 </form>
             </div>
         </div>
-        // <div className="max-w-xl mx-auto p-6 bg-base-100 shadow-xl rounded-xl mt-10">
-        //     <h2 className="text-2xl font-bold mb-4 text-center">Add New Food</h2>
-        //     <form onSubmit={handleSubmit} className="space-y-4">
-
-        //         <div>
-        //             <label className="label">Food Title</label>
-        //             <input type="text" name="title" onChange={handleChange} className="input input-bordered w-full" required />
-        //         </div>
-
-        //         <div>
-        //             <label className="label">Food Image URL</label>
-        //             <input type="text" name="image" onChange={handleChange} className="input input-bordered w-full" required />
-        //         </div>
-
-        //         <div>
-        //             <label className="label">Category</label>
-        //             <select
-        //                 name="category"
-        //                 onChange={handleChange}
-        //                 className="select select-bordered w-full"
-        //                 required
-        //                 defaultValue=""
-        //             >
-        //                 <option disabled value="">Select Category</option>
-        //                 <option>Dairy</option>
-        //                 <option>Meat & Poultry</option>
-        //                 <option>Fish</option>
-        //                 <option>Vegetables</option>
-        //                 <option>Fruits</option>
-        //                 <option>Grains & Cereals</option>
-        //                 <option>Snacks</option>
-        //                 <option>Beverages</option>
-        //                 <option>Condiments & Spices</option>
-        //                 <option>Bakery</option>
-        //                 <option>Sweets & Desserts</option>
-        //                 <option>Nuts & Seeds</option>
-        //                 <option>Oils & Fats</option>
-        //                 <option>Others</option>
-        //             </select>
-        //         </div>
-
-        //         <div>
-        //             <label className="label">Quantity</label>
-        //             <input type="number" name="quantity" min="1" onChange={handleChange} className="input input-bordered w-full" required />
-        //         </div>
-
-        //         <div>
-        //             <label className="label">Expiry Date</label>
-        //             <input type="date" name="expiryDate" onChange={handleChange} className="input input-bordered w-full" required />
-        //         </div>
-
-        //         <div>
-        //             <label className="label">Description</label>
-        //             <textarea name="description" onChange={handleChange} className="textarea textarea-bordered w-full" required />
-        //         </div>
-
-        //         <button type="submit" className="btn btn-primary w-full">Update Item</button>
-        //     </form>
-        // </div>
     );
 };
 
