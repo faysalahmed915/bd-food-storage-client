@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router';
 import ExpiredFoodCard from '../Components/Foods/ExpiredFoodCard';
 import StatsCountUp from '../Components/DateCount/StatsCountUp';
+import AwesomeReveal from '../Components/HomeComponents/AwesomeReveal';
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
 
     return (
         <div>
+            <AwesomeReveal></AwesomeReveal>
             <StatsCountUp allFoods={allFoods} />
             
             <section className="my-8 px-4">
