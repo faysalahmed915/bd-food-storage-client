@@ -88,18 +88,22 @@ const AddFood = () => {
 
                 <div>
                     <label className="label">Category</label>
-                    <select name="category" onChange={handleChange} className="select select-bordered w-full" required>
-                        <option disabled selected value="">Select Category</option>
+                    <select
+                        name="category"
+                        onChange={handleChange}
+                        className="select select-bordered w-full"
+                        required
+                        defaultValue=""
+                    >
+                        <option disabled value="">Select Category</option>
                         <option>Dairy</option>
                         <option>Meat & Poultry</option>
-                        <option>Seafood</option>
+                        <option>Fish</option>
                         <option>Vegetables</option>
                         <option>Fruits</option>
                         <option>Grains & Cereals</option>
                         <option>Snacks</option>
                         <option>Beverages</option>
-                        <option>Frozen Foods</option>
-                        <option>Canned & Jarred</option>
                         <option>Condiments & Spices</option>
                         <option>Bakery</option>
                         <option>Sweets & Desserts</option>
