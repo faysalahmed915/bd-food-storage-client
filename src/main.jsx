@@ -8,7 +8,7 @@ import AuthProvider from './Provider/AuthProvider.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AuthProvider>
-      <RouterProvider router={Router} fallbackElement={<p>Loading, Please Wait....</p>} />
+        <RouterProvider router={Router} fallbackElement={<p>Loading, Please Wait....</p>} />
     </AuthProvider>
   </StrictMode>,
 )

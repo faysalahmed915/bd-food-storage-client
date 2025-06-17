@@ -2,12 +2,16 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router';
 // import toast from 'react-hot-toast';
 import { AuthContext } from '../Provider/AuthProvider';
-import axios from 'axios';
 import Swal from 'sweetalert2';
+import PostFridgeApi from '../api/PostFridgeApi';
 
 const AddFood = () => {
-    const { user } = useContext(AuthContext); // assumes user.email is available
+    const { user } = useContext(AuthContext);
+    // console.log(user);
     const navigate = useNavigate();
+    const { myAddItemsPromise } = PostFridgeApi();
+    // console.log(myAddItemsPromise);
+
 
     const [formData, setFormData] = useState({
         image: '',
@@ -25,19 +29,23 @@ const AddFood = () => {
     const handleSubmit = async e => {
         e.preventDefault();
 
+        const now = new Date(); // current time
+        const dateOnly = formData.expiryDate; // e.g. "2025-06-20"
+        const combinedDateTime = new Date(`${dateOnly}T${now.toTimeString().split(' ')[0]}`); // "2025-06-20T17:45:00"
+
         const foodItem = {
             ...formData,
             quantity: parseInt(formData.quantity),
             userEmail: user.email,
             addedDate: new Date().toISOString(),
+            expiryDate: combinedDateTime.toISOString(),
         };
-        // console.log(foodItem);
+        console.log(foodItem);
 
 
-        axios.post('http://localhost:3000/fridge', foodItem)
+        myAddItemsPromise(foodItem)
             .then(res => {
-                // console.log(res.data)
-                if (res.data.insertedId) {
+                if (res.insertedId) {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
@@ -49,8 +57,8 @@ const AddFood = () => {
                 }
             })
             .catch(error => {
-                console.log(error)
-            })
+                console.error('Failed to add item:', error);
+            });
 
         // try {
         //     const res = await fetch('http://localhost:3000/foods', {

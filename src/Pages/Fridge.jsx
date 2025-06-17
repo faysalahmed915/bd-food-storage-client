@@ -19,7 +19,7 @@ const Fridge = () => {
     // console.log(fetchFoods)
 
     const allFoods = useLoaderData();
-    // console.log(allFoods)
+    console.log(allFoods)
 
     const [allSelectedFoods, setAllSelectedFoods] = useState(allFoods)
     const [selectedCategory, setSelectedCategory] = useState('');

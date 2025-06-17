@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { use } from 'react';
+import { use } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const axiosInstance = axios.create({

@@ -1,4 +1,3 @@
-import React from 'react';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 
 const UserFridgeApi = () => {
@@ -10,6 +9,9 @@ const UserFridgeApi = () => {
             .catch(error => {
                 console.error('Error fetching items:', error);
                 throw error;
+            })
+            .finally(() => {
+                console.log('Finished fetching items for:', email);
             });
     }
 
