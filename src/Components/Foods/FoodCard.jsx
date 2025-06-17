@@ -49,7 +49,7 @@ const FoodCard = ({ food }) => {
             <div className="card-body">
                 <h2 className="card-title text-xl justify-between">
                     {title}
-                    {!isExpired && <div className="badge badge-error">Expired</div>}
+                    {isExpired && <div className="badge badge-error">Expired</div>}
                 </h2>
                 {/* {!result &&
                     <div className="badge badge-secondary">
