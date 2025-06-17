@@ -59,24 +59,6 @@ const AddFood = () => {
             .catch(error => {
                 console.error('Failed to add item:', error);
             });
-
-        // try {
-        //     const res = await fetch('http://localhost:3000/foods', {
-        //         method: 'POST',
-        //         headers: { 'Content-Type': 'application/json' },
-        //         body: JSON.stringify(foodItem),
-        //     });
-
-        //     if (res.ok) {
-        //         toast.success('Food item added successfully!');
-        //         navigate('/my-items');
-        //     } else {
-        //         toast.error('Failed to add item.');
-        //     }
-        // } catch (err) {
-        //     console.error(err);
-        //     toast.error('Error adding food item.');
-        // }
     };
 
     return (

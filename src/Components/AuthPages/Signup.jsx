@@ -81,7 +81,7 @@ const SignUp = () => {
 
 
 
-        axios.post('http://localhost:3000/allUsers', newUser)
+        axios.post('https://bd-food-storage-server.vercel.app/allUsers', newUser)
             .then(res => {
                 console.log(res.data)
                 if (res.data.insertedId) {

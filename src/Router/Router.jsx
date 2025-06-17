@@ -23,7 +23,7 @@ export const Router = createBrowserRouter([
                 path: '/',
                 Component: Home,
                 loader: async () => {
-                    const res = await fetch('http://localhost:3000/fridge');
+                    const res = await fetch('https://bd-food-storage-server.vercel.app/fridge');
                     return res.json();
                 },
                 hydrateFallbackElement: <h1>Loading...</h1>,
@@ -32,7 +32,7 @@ export const Router = createBrowserRouter([
                 path: '/fridge',
                 Component: Fridge,
                 loader: async () => {
-                    const res = await fetch('http://localhost:3000/fridge');
+                    const res = await fetch('https://bd-food-storage-server.vercel.app/fridge');
                     return res.json();
                 },
                 hydrateFallbackElement: <h1>Loading...</h1>,
@@ -57,7 +57,7 @@ export const Router = createBrowserRouter([
                 </PrivateRout>,
                 // Component: FoodDetails,
                 loader: async ({ params }) => {
-                    const res = await fetch(`http://localhost:3000/fridge/${params.id}`);
+                    const res = await fetch(`https://bd-food-storage-server.vercel.app/fridge/${params.id}`);
                     return res.json();
                 },
                 hydrateFallbackElement: <h1>Loading...</h1>,

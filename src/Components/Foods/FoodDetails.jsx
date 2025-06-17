@@ -38,7 +38,7 @@ const FoodDetails = () => {
             console.log(result.isConfirmed)
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/fridge/${_id}`, {
+                fetch(`https://bd-food-storage-server.vercel.app/fridge/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

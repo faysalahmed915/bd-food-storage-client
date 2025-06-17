@@ -6,7 +6,7 @@ const Fridge = () => {
 
     // const fetchFoods = async () => {
     //     try {
-    //        const response = await axios.get('http://localhost:3000/fridge')
+    //        const response = await axios.get('https://bd-food-storage-server.vercel.app/fridge')
     //     .then(response => {
     //         console.log(response.data);
     //     })

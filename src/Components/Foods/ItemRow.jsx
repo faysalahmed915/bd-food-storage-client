@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import UpdateFoodModal from './updateFoodModal';
 
-const ItemRow = ({ item, key }) => {
+const ItemRow = ({ item, index }) => {
 
     const { addedDate, category, title, userEmail, description, expiryDate, image, quantity, _id } = item;
-const navigate = useNavigate()
+    const navigate = useNavigate()
 
-     const handleDelete = () => {
+    const [modalOpen, setModalOpen] = useState(false);
+
+    const handleDelete = () => {
         console.log(_id)
         Swal.fire({
             title: "Are you sure?",
@@ -21,7 +24,7 @@ const navigate = useNavigate()
             console.log(result.isConfirmed)
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/fridge/${_id}`, {
+                fetch(`https://bd-food-storage-server.vercel.app/fridge/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -40,17 +43,24 @@ const navigate = useNavigate()
     }
     return (
         <tr>
-            <td>{key + 1}</td>
+            <td>{index + 1}</td>
             <td className='text-left'>{title.toUpperCase()}</td>
             <td className='text-left'>{category}</td>
             <td>{quantity}</td>
             <td>{new Date(addedDate).toLocaleDateString()}</td>
             <td>{new Date(expiryDate).toLocaleDateString()}</td>
             <td>{new Date(expiryDate) < new Date() ? 'Expired' : 'Fresh'}</td>
-            <td>
-                <Link>
-                    <button className="text-white px-4 py-2 rounded-xl bg-green-600 hover:bg-green-700 transition mr-2">Update</button>
-                </Link>
+            <td className='flex items-center justify-center flex-wrap gap-2'>
+                <div>
+                    <button className="text-white px-4 py-2 rounded-xl bg-green-600 hover:bg-green-700 transition mr-2"
+                    onClick={() => setModalOpen(true)}>
+                        Update
+                        </button>
+                        <UpdateFoodModal 
+                        isOpen={modalOpen}
+                onClose={() => setModalOpen(false)}
+                item={item}/>
+                </div>
                 <button
                     onClick={() => handleDelete(_id)}
 

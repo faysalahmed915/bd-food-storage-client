@@ -29,7 +29,7 @@ const MyItemsTable = ({ myItems }) => {
 
                 <tbody>
                     {myItems.map((item, index) => (
-                        <ItemRow item={item} key={index}></ItemRow>
+                        <ItemRow item={item} key={index} index={index}></ItemRow>
                     ))}
 
 
