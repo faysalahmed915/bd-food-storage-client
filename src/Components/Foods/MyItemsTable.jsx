@@ -11,8 +11,8 @@ const MyItemsTable = ({ myItems }) => {
                 <thead className="bg-base-500">
                     <tr>
                         <th>No</th>
-                        <th>Title</th>
-                        <th>Category</th>
+                        <th className='text-left'>Title</th>
+                        <th className='text-left'>Category</th>
                         <th>Quantity</th>
                         <th>Added Date</th>
                         <th>Expiry Date</th>
@@ -33,8 +33,8 @@ const MyItemsTable = ({ myItems }) => {
                     {myItems.map((item, index) => (
                         <tr key={item._id}>
                             <td>{index + 1}</td>
-                            <td>{item.title}</td>
-                            <td>{item.category}</td>
+                            <td className='text-left'>{item.title.toUpperCase()}</td>
+                            <td className='text-left'>{item.category}</td>
                             <td>{item.quantity}</td>
                             <td>{new Date(item.addedDate).toLocaleDateString()}</td>
                             <td>{new Date(item.expiryDate).toLocaleDateString()}</td>
