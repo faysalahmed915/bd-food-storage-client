@@ -48,7 +48,7 @@ const FoodCard = ({ food }) => {
             </figure>
             <div className="card-body">
                 <h2 className="card-title text-xl justify-between">
-                    {title}
+                    {title.toUpperCase()}
                     {isExpired && <div className="badge badge-error">Expired</div>}
                 </h2>
                 {/* {!result &&

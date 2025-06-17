@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CountUp from "react-countup";
 import ExpiryCountdown from "./ExpiryCountdown";
+import ExpiringFoodCard from "../Foods/ExpiringFoodCard";
 
 const StatsCountUp = ({ allFoods }) => {
   const [now, setNow] = useState(new Date());
@@ -30,7 +31,7 @@ const StatsCountUp = ({ allFoods }) => {
   return (
     <div className="my-8 max-w-7xl mx-auto px-4">
       <h2 className="text-xl font-semibold mb-4 text-primary text-center">
-        Platform Status as of {formatTime(now)}
+        Current Time: {formatTime(now)}
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -53,10 +54,11 @@ const StatsCountUp = ({ allFoods }) => {
         </div>
       </div>
       <p className="mt-2">
+        <h1 className="text-2xl font-bold my-4 text-center">Items Expiring Soon</h1>
 
         {!nearlyExpiredFoods.length && 'No items expiring in the next 5 days.'}
 
-        {nearlyExpiredFoods.map(food => <ExpiryCountdown expiryDate={food.expiryDate} />)}
+        {nearlyExpiredFoods.map(food => <ExpiringFoodCard food={food} />)}
 
       </p>
     </div>

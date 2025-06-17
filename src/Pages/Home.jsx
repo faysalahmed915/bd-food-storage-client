@@ -14,16 +14,13 @@ const Home = () => {
 
     return (
         <div>
-            <h1>I am home</h1>
-
             <StatsCountUp allFoods={allFoods} />
-            <section> ...Expired Food Cards... </section>
-
+            
             <section className="my-8 px-4">
                 <h1 className="text-2xl font-bold mb-4 text-center">Expired Food Items</h1>
 
                 {expiredFoods.length === 0 ? (
-                    <p className="text-gray-500">No expired items found.</p>
+                    <p className="text-gray-500">No expired items are there.</p>
                 ) : (
                     <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
 

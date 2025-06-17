@@ -67,31 +67,8 @@ const Fridge = () => {
 
     return (
         <div>
-            <h1 className="text-4xl font-bold text-center py-10">Manage Bills</h1>
+            <h1 className="text-4xl font-bold text-center py-10">All Items</h1>
             <div className="flex justify-center gap-4">
-
-
-                {/* <select 
-                onChange={(e) => {
-                        const value = e.target.value;
-                        if (value === 'All') {
-                            setBills(allBills);
-                        } else {
-                            handleSortByType(value);
-                        }
-                    }}
-                className="select select-bordered w-full max-w-xs">
-                    <option
-
-                    // disabled selected
-
-                    >Filter by payment</option>
-                    <option>All</option>
-                    <option>Paid</option>
-                    <option>Unpaid</option>
-                </select> */}
-
-
                 <select
                     className="select select-bordered w-full max-w-xs"
                     value={selectedCategory}

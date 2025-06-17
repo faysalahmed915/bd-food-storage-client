@@ -15,7 +15,8 @@ const getTimeRemaining = (expiryDate) => {
   return { expired: false, days, hours, minutes, seconds };
 };
 
-const ExpiryCountdown = ({ expiryDate }) => {
+const ExpiryCountdown = ({ food }) => {
+    const { expiryDate } = food;
   const [timeLeft, setTimeLeft] = useState(() => getTimeRemaining(expiryDate));
 
   useEffect(() => {

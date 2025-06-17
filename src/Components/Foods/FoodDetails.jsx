@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Link, useLoaderData, useNavigate } from 'react-router';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import ExpiryCountdown from '../DateCount/ExpiryCountdown';
 
 const FoodDetails = () => {
 
@@ -126,23 +127,31 @@ const FoodDetails = () => {
                     : 'bg-yellow-100 border-l-4 border-yellow-500'
                     }`}
             >
-                <span className="text-2xl">
-                    {isExpired ? '🚫' : '⏳'}
-                </span>
-                <div>
-                    <p
-                        className={`font-semibold text-lg ${isExpired ? 'text-red-800' : 'text-yellow-800'
-                            }`}
-                    >
-                        {isExpired ? 'Expired on:' : 'Expiry Date:'}
-                    </p>
-                    <p
-                        className={`text-base font-medium ${isExpired ? 'text-red-700' : 'text-yellow-700'
-                            }`}
-                    >
-                        {expiryDate ? dayjs(expiryDate).format('YYYY-MM-DD') : 'No deadline set'}
-                    </p>
+                <div className="flex flex-wrap items-center justify-between w-full gap-2">
+                    <div className='flex items-center gap-2'>
+                        <span className="text-2xl">
+                            {isExpired ? '🚫' : '⏳'}
+                        </span>
+                        <div>
+                            <p
+                                className={`font-semibold text-lg ${isExpired ? 'text-red-800' : 'text-yellow-800'
+                                    }`}
+                            >
+                                {isExpired ? 'Expired on:' : 'Expiry Date:'}
+                            </p>
+                            <p
+                                className={`text-base font-medium ${isExpired ? 'text-red-700' : 'text-yellow-700'
+                                    }`}
+                            >
+                                {expiryDate ? dayjs(expiryDate).format('YYYY-MM-DD') : 'No deadline set'}
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <ExpiryCountdown food={foodDetails}></ExpiryCountdown>
+                    </div>
                 </div>
+
             </div>
 
             {/* Details Grid */}
