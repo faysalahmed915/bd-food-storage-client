@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import UpdateFoodModal from './updateFoodModal';
 
@@ -53,13 +53,13 @@ const ItemRow = ({ item, index }) => {
             <td className='flex items-center justify-center flex-wrap gap-2'>
                 <div>
                     <button className="text-white px-4 py-2 rounded-xl bg-green-600 hover:bg-green-700 transition mr-2"
-                    onClick={() => setModalOpen(true)}>
+                        onClick={() => setModalOpen(true)}>
                         Update
-                        </button>
-                        <UpdateFoodModal 
+                    </button>
+                    <UpdateFoodModal
                         isOpen={modalOpen}
-                onClose={() => setModalOpen(false)}
-                item={item}/>
+                        onClose={() => setModalOpen(false)}
+                        item={item} />
                 </div>
                 <button
                     onClick={() => handleDelete(_id)}

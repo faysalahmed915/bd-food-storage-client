@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <footer 
+    <footer className="bg-secondary text-secondary-content"
     // className='card-container'
     // className="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200"
     >

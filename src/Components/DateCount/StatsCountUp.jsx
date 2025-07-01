@@ -36,7 +36,7 @@ const StatsCountUp = ({ allFoods }) => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {/* Expired Foods */}
-        <div className="stat bg-base-100 shadow border border-red-300 rounded-lg">
+        <div className="stat bg-base-200 shadow border border-red-300 rounded-lg">
           <div className="stat-title text-error">Expired Foods</div>
           <div className="stat-value text-error text-4xl">
             <CountUp end={expiredFoods.length} duration={2} />
@@ -45,7 +45,7 @@ const StatsCountUp = ({ allFoods }) => {
         </div>
 
         {/* Nearly Expired Foods */}
-        <div className="stat bg-base-100 shadow border border-warning rounded-lg">
+        <div className="stat bg-base-200 shadow border border-warning rounded-lg">
           <div className="stat-title text-warning">Nearly Expired (Next 5 Days)</div>
           <div className="stat-value text-warning text-4xl">
             <CountUp end={nearlyExpiredFoods.length} duration={2} />
