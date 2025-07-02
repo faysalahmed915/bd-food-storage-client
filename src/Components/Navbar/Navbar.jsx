@@ -5,6 +5,7 @@ import PhotoUser from '../Profile/PhotoUser';
 import { AuthContext } from '../../Provider/AuthProvider';
 import toast from 'react-hot-toast';
 import ThemeToggle from '../Theme/ThemeToggle';
+import Logo from '../Shared/Logo';
 
 const Navbar = () => {
     const { user, logOut, loading } = use(AuthContext);
@@ -42,10 +43,10 @@ const Navbar = () => {
 
     return (
         <div className="bg-secondary shadow-md px-2 md:px-4 lg:px-8 py-2 sticky top-0 z-50 text-secondary-content">
-        <div className="navbar max-w-7xl mx-auto px-0">
+        <div className="navbar max-w-7xl mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost text-gray-600 lg:hidden hover:bg-gray-100">
+                    <div tabIndex={0} role="button" className="btn btn-ghost text-gray-600 lg:hidden hover:bg-gray-100 pl-0">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
@@ -57,10 +58,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to="/" className="text-xl font-bold hidden lg:flex items-center gap-2">
-                    <BiSolidFridge className="text-[#176AE5] text-2xl" />
-                    BD Food Storage
-                </Link>
+                <div className='hidden lg:flex'><Logo></Logo></div>
             </div>
 
             <div className="navbar-center hidden lg:flex">

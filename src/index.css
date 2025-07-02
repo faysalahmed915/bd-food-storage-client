@@ -1,6 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: luxury --default, caramellatte --prefersdark, cupcake;
+  themes: business --default, winter --prefersdark, cupcake;
 }
 
 @keyframes spin-slow {

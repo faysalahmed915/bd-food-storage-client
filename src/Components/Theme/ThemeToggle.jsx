@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 
 const ThemeToggle = () => {
-    const [theme, setTheme] = useState("luxury"); // default fallback
+    const [theme, setTheme] = useState("winter"); // default fallback
 
     // On mount: load theme from localStorage or <html data-theme="">
     useEffect(() => {
         const storedTheme = localStorage.getItem("theme");
-        const currentTheme = storedTheme || document.documentElement.getAttribute("data-theme") || "luxury";
+        const currentTheme = storedTheme || document.documentElement.getAttribute("data-theme") || "business";
         setTheme(currentTheme);
         document.documentElement.setAttribute("data-theme", currentTheme);
     }, []);
 
     const toggleTheme = () => {
-        const newTheme = theme === "caramellatte" ? "luxury" : "caramellatte";
+        const newTheme = theme === "winter" ? "business" : "winter";
         setTheme(newTheme);
         document.documentElement.setAttribute("data-theme", newTheme);
         localStorage.setItem("theme", newTheme);
@@ -24,7 +24,7 @@ const ThemeToggle = () => {
                 <input
                     type="checkbox"
                     onChange={toggleTheme}
-                    checked={theme === "luxury"}
+                    checked={theme === "business"}
                 />
                 {/* Sun icon (Light mode) */}
                 <svg

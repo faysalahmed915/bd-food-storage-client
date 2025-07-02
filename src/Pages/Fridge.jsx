@@ -66,11 +66,12 @@ const Fridge = () => {
 
 
     return (
-        <div>
+        <section className=' px-2 md:px-4 lg:px-8 max-w-7xl mx-auto'>
+
             <h1 className="text-4xl font-bold text-center py-10">All Items</h1>
             <div className="flex justify-center gap-4">
                 <select
-                    className="select select-bordered w-full max-w-xs"
+                    className="select select-bordered w-full max-w-7xl"
                     value={selectedCategory}
                     onChange={(e) => {
                         const value = e.target.value;
@@ -128,7 +129,7 @@ const Fridge = () => {
 
 
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 p-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 py-4">
                 {allSelectedFoods.length === 0 ? (
                     <p className="text-center col-span-full">No food items found.</p>
                 ) : (
@@ -137,7 +138,7 @@ const Fridge = () => {
                     ))
                 )}
             </div>
-        </div>
+        </section>
     );
 };
 

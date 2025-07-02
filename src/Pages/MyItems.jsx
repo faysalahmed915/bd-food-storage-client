@@ -8,11 +8,11 @@ const MyItems = () => {
     const { myItemsPromise } = UserFridgeApi();
 
     return (
-        <div>
+        <section className='px-2 md:px-4 lg:px-8 max-w-7xl mx-auto'>
             <Suspense fallback={'loading your items...'}>
                 <MyItemsInterface myItemsPromise={myItemsPromise(user.email)}></MyItemsInterface>
             </Suspense>
-        </div>
+        </section>
     );
 };
 

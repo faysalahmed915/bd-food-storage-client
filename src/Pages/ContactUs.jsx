@@ -2,10 +2,10 @@ import React from 'react';
 
 const ContactUs = () => {
     return (
-        <section className="py-12">
-            <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x md:divide-gray-300">
+        <section className="py-12 px-2 md:px-4 lg:px-8 max-w-7xl mx-auto">
+            <div className="grid max-w-7xl grid-cols-1 mx-auto md:grid-cols-2 md:divide-x md:divide-gray-300">
                 {/* Contact Info */}
-                <div className="py-8 md:px-6">
+                <div className="py-8 md:pr-6">
                     <h1 className="text-4xl font-extrabold mb-2">Get in touch</h1>
                     <p className="mb-6">We’d love to hear from you. Here’s how you can reach us.</p>
                     <div className="space-y-5">
@@ -32,7 +32,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* Contact Form */}
-                <form noValidate className="flex flex-col py-8 space-y-6 md:px-6">
+                <form noValidate className="flex flex-col py-8 space-y-6 md:pl-6">
                     <h1 className="text-4xl font-extrabold mb-2">Let Us Know</h1>
                     <label className="block">
                         <span className="text-sm font-medium">Full Name</span>

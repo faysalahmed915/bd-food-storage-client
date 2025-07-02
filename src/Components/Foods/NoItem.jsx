@@ -3,8 +3,8 @@ import { FaUsers } from "react-icons/fa";
 import { Link } from 'react-router';
 const NoItem = () => {
     return (
-        <div className="flex items-center justify-center py-40  px-4">
-            <div className="bg-gray-50 shadow-xl rounded-2xl p-8 max-w-md w-full text-center space-y-6">
+        <div className="flex items-center justify-center py-40">
+            <div className="bg-gray-50 shadow-xl rounded-2xl p-8 max-w-md w-full text-center space-y-6 mg-auto">
                 <div className="flex justify-center text-blue-600 text-5xl">
                     <FaUsers />
                 </div>
