@@ -3,7 +3,7 @@ import Logo from "../Shared/Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-secondary text-secondary-content"
+    <footer className="bg-base-300 text-base-content shadow-2xl"
     // className='card-container'
     // className="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200"
     >

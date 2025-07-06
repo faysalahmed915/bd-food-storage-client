@@ -28,21 +28,21 @@ const Navbar = () => {
 
     const links = (
         <>
-            <NavLink to="/" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-secondary-content"}>Home</NavLink>
+            <NavLink to="/" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : ""}>Home</NavLink>
 
-            {user && <NavLink to="/MyItems" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-secondary-content"}>My Items</NavLink>}
+            {user && <NavLink to="/MyItems" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : ""}>My Items</NavLink>}
 
-            <NavLink to="/fridge" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-secondary-content"}>Fridge</NavLink>
+            <NavLink to="/fridge" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : ""}>Fridge</NavLink>
 
 
-            {user && <NavLink to="/AddFood" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-secondary-content"}>Add Food</NavLink>}
+            {user && <NavLink to="/AddFood" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : ""}>Add Food</NavLink>}
 
-            <NavLink to="/contactUs" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : "text-secondary-content"}>Contact Us</NavLink>
+            <NavLink to="/contactUs" className={({ isActive }) => isActive ? "text-[#176AE5] font-bold" : ""}>Contact Us</NavLink>
         </>
     )
 
     return (
-        <div className="bg-secondary shadow-md px-2 md:px-4 lg:px-8 py-2 sticky top-0 z-50 text-secondary-content">
+        <div className="bg-base-300 shadow-md px-2 md:px-4 lg:px-8 py-2 sticky top-0 z-50">
         <div className="navbar max-w-7xl mx-auto">
             <div className="navbar-start">
                 <div className="dropdown">
