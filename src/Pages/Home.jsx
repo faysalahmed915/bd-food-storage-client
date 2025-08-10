@@ -5,6 +5,8 @@ import StatsCountUp from '../Components/DateCount/StatsCountUp';
 import AwesomeReveal from '../Components/HomeComponents/AwesomeReveal';
 import QuoteHighlight from '../Components/HomeComponents/QuoteHighlight';
 import FeatureGrid from '../Components/HomeComponents/FeatureGrid';
+import BDFoodPromo from '../Components/HomeComponents/BDFoodPromo';
+import FoodWastePromo from '../Components/HomeComponents/BDFoodPromo';
 
 const Home = () => {
 
@@ -24,6 +26,9 @@ const Home = () => {
             <section className='px-2 md:px-4 lg:px-8 max-w-7xl mx-auto'>
 
                 <StatsCountUp allFoods={allFoods} />
+            </section>
+            <section className=' px-2 md:px-4 lg:px-8 max-w-7xl mx-auto'>
+                <FoodWastePromo></FoodWastePromo>
             </section>
 
             <section className="px-2 md:px-4 lg:px-8 max-w-7xl mx-auto py-2 md:py-4 lg:py-8">
@@ -50,6 +55,7 @@ const Home = () => {
             <section className=' px-2 md:px-4 lg:px-8 max-w-7xl mx-auto'>
                 <FeatureGrid></FeatureGrid>
             </section>
+            
         </div>
     );
 };
