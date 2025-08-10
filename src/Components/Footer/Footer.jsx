@@ -3,11 +3,11 @@ import Logo from "../Shared/Logo";
 
 const Footer = () => {
   return (
-    <footer className="bg-base-300 text-base-content shadow-2xl"
+    <footer className="bg-base-300 text-base-content shadow-2xl  max-w-7xl mx-auto px-2 md:px-4 lg:px-8 py-2"
     // className='card-container'
     // className="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200"
     >
-      <div className="max-w-5xl mx-auto px-4 py-10 flex flex-col md:flex-row justify-between gap-6">
+      <div className="flex flex-col md:flex-row justify-between gap-6">
         {/* Logo and Description */}
         <div className="space-y-2">
           <Logo />
