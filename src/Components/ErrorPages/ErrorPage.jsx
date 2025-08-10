@@ -1,23 +1,48 @@
-import { Link, useRouteError } from 'react-router';
+import { Link, useRouteError } from "react-router";
+import { FaExclamationTriangle } from "react-icons/fa";
 
 const ErrorPage = () => {
-    const error = useRouteError()
-    return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100 text-center p-4">
-            <div className="bg-white p-10 rounded-2xl shadow-xl">
-                <h1 className="text-6xl font-bold text-red-500 mb-4">{error?.status || 404}</h1>
-                <p className="text-xl text-gray-700 mb-2">Oops! Page not found.</p>
-                <h1 className="text-6xl font-bold text-red-500 mb-4">Sometimes it works on multiple refresh due to poor vercel server connection</h1>
-                <p className="text-gray-500">The page you're looking for doesn't exist.
-                    {/* <br />
-                    So don't waste time and <span className='text-blue-600 shadow'>learn some code</span>. Go home now */}
-                </p>
-                <Link to="/">
-                <button className="btn btn-outline btn-success mt-2">Go Home</button>
-                </Link>
-            </div>
+  const error = useRouteError();
+  const status = error?.status || 404;
+
+  const getMessage = (code) => {
+    switch (code) {
+      case 404:
+        return "The page you are looking for doesn’t exist.";
+      case 500:
+        return "Internal server error. Please try again later.";
+      case 403:
+        return "You don’t have permission to view this page.";
+      default:
+        return "An unexpected error occurred. Please try again.";
+    }
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
+      <div className="bg-white shadow-lg rounded-2xl p-8 max-w-lg w-full text-center">
+        
+        {/* Icon */}
+        <div className="flex justify-center mb-4">
+          <FaExclamationTriangle className="text-yellow-500 text-5xl" />
         </div>
-    );
+
+        {/* Status Code */}
+        <h1 className="text-6xl font-bold text-gray-800 mb-2">{status}</h1>
+
+        {/* Message */}
+        <p className="text-lg text-gray-600 mb-6">{getMessage(status)}</p>
+
+        {/* CTA */}
+        <Link
+          to="/"
+          className="inline-block bg-[#176AE5] text-white px-6 py-3 rounded-full shadow-md hover:bg-[#145bcc] transition-all"
+        >
+          Go Back Home
+        </Link>
+      </div>
+    </div>
+  );
 };
 
 export default ErrorPage;
