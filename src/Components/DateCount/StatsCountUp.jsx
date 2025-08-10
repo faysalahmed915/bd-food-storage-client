@@ -58,7 +58,9 @@ const StatsCountUp = ({ allFoods }) => {
 
         {!nearlyExpiredFoods.length && 'No items expiring in the next 5 days.'}
 
-        {nearlyExpiredFoods.map(food => <ExpiringFoodCard food={food} />)}
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {nearlyExpiredFoods.map(food => <ExpiringFoodCard food={food} />)}
+        </div>
 
       </p>
     </div>

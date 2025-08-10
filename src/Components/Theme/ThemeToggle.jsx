@@ -20,7 +20,7 @@ const ThemeToggle = () => {
 
     return (
         <div className="flex gap-2 items-center">
-            <label className="swap swap-rotate ml-3 md:p-2 p-1 rounded-full bg-secondary text-white hover:bg-primary-focus cursor-pointer transition duration-200">
+            <label className="swap swap-rotate ml-3 md:p-2 p-1 rounded-full bg-base-200  hover:bg-primary-focus cursor-pointer transition duration-200">
                 <input
                     type="checkbox"
                     onChange={toggleTheme}
