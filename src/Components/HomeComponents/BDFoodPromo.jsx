@@ -9,7 +9,7 @@ const FoodWastePromo = () => {
         {/* Left: Big fact */}
         <div className="flex-1 text-center md:text-left">
           <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-            Every year, Bangladesh wastes <span className="text-yellow-600">4 million tons</span> of food.
+            Every year, Bangladesh wastes <span className="text-[#176AE5]">4 million tons</span> of food.
           </h2>
           <p className="mt-4 text-lg">
             Imagine how many people could be fed if we saved just a fraction of that.  

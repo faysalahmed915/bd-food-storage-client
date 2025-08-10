@@ -30,7 +30,8 @@ const StatsCountUp = ({ allFoods }) => {
 
   return (
     <div className="my-8 max-w-7xl mx-auto">
-      <h2 className="text-xl font-semibold mb-4 text-primary text-center">
+      <h1 className="text-3xl font-bold my-4 text-center">Items Stats</h1>
+      <h2 className="text-xl font-semibold mb-4 text-[#176AE5] text-right">
         Current Time: {formatTime(now)}
       </h2>
 
@@ -54,7 +55,7 @@ const StatsCountUp = ({ allFoods }) => {
         </div>
       </div>
       <p className="mt-2">
-        <h1 className="text-2xl font-bold my-4 text-center">Items Expiring Soon</h1>
+        <h1 className="text-3xl font-bold my-4 text-center">Items Expiring Soon</h1>
 
         {!nearlyExpiredFoods.length && 'No items expiring in the next 5 days.'}
 

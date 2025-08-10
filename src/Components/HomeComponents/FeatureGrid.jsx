@@ -19,7 +19,7 @@ const FeatureGrid = () => {
 
   return (
     <div className="my-10">
-      <h2 className="text-2xl font-bold text-center mb-6">Why Use Our App?</h2>
+      <h2 className="text-3xl font-bold text-center mb-6">Why Use Our App?</h2>
       <div className="grid gap-6 grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto">
         {features.map((f, i) => (
           <div key={i} className="card bg-base-200 shadow-md p-4 hover:shadow-xl transition duration-300">

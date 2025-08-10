@@ -32,7 +32,7 @@ const Home = () => {
             </section>
 
             <section className="px-2 md:px-4 lg:px-8 max-w-7xl mx-auto py-2 md:py-4 lg:py-8">
-                <h1 className="text-2xl font-bold mb-4 text-center">Expired Food Items</h1>
+                <h1 className="text-3xl font-bold mb-4 text-center">Expired Food Items</h1>
 
                 {expiredFoods.length === 0 ? (
                     <p className="text-gray-500">No expired items are there.</p>
