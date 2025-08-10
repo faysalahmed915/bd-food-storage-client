@@ -29,7 +29,7 @@ const StatsCountUp = ({ allFoods }) => {
   const formatTime = (date) => date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
 
   return (
-    <div className="my-8 max-w-7xl mx-auto px-4">
+    <div className="my-8 max-w-7xl mx-auto">
       <h2 className="text-xl font-semibold mb-4 text-primary text-center">
         Current Time: {formatTime(now)}
       </h2>
